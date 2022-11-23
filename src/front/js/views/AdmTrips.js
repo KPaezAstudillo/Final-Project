@@ -67,39 +67,27 @@ const Mytrips = () => {
           </Link>
         </button>
       );
-    } else {
-      console.log("else");
-      return (
-        <button className="btn-delete btn-warning">
-          <Link
-            className="text-decoration-none text-dark"
-            to="/users/:id/setpreferences"
-          >
-            <GrConfigure /> Preferences
-          </Link>
-        </button>
-      );
-    }
+    } else ""
   };
 
-  const functionMatch = (end_date) => {
-    const myDate = new Date(end_date);
-    const today = new Date();
-    console.log("fecha", myDate, today);
-    if (today >= myDate) {
-      console.log("if2");
-      return "";
-    } else {
-      console.log("else2");
-      return (
-        <button className="btn-find btn-success">
-          <Link className="text-decoration-none text-white" to="/matches">
-            <BsFillPeopleFill /> Find Matches
-          </Link>
-        </button>
-      );
-    }
-  };
+  // const functionMatch = (end_date) => {
+  //   const myDate = new Date(end_date);
+  //   const today = new Date();
+  //   console.log("fecha", myDate, today);
+  //   if (today >= myDate) {
+  //     console.log("if2");
+  //     return "";
+  //   } else {
+  //     console.log("else2");
+  //     return (
+  //       <button className="btn-find btn-success">
+  //         <Link className="text-decoration-none text-white mt-2" to="/matches">
+  //           <BsFillPeopleFill /> Find Matches
+  //         </Link>
+  //       </button>
+  //     );
+  //   }
+  // };
 
   const handleLogout = () => {
     localStorage.clear();
@@ -120,6 +108,13 @@ const Mytrips = () => {
                 Create my trips
               </Link>
             </div>
+            <div>
+            <button className="btn-find btn-success mt-3">
+          <Link className="text-decoration-none text-white" to="/matches">
+            <BsFillPeopleFill /> Find Matches
+          </Link>
+        </button>
+        </div>
           </div>
         </div>
 
@@ -146,7 +141,7 @@ const Mytrips = () => {
                       </div>
                       <div className="row ">
                         <div className="btn my-auto">
-                          {functionMatch(item.end_date)}
+                          {/* {functionMatch(item.end_date)} */}
                           {/* <button className="btn-find btn-success">
                           <Link
                               className="text-decoration-none text-white"
@@ -169,7 +164,6 @@ const Mytrips = () => {
                               <GrConfigure /> Rate your partner
                             </Link>
                           </button> */}
-                          {functionDisabled(item.end_date)}
                           <button className="btn-find btn-primary m-1">
                             <Link
                               className="text-decoration-none text-white"
@@ -178,6 +172,7 @@ const Mytrips = () => {
                               <FaSuitcase /> Recommendations
                             </Link>
                           </button>
+                          {functionDisabled(item.end_date)}
                         </div>
                       </div>
                     </div>
