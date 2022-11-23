@@ -13,7 +13,7 @@ import Poll from "./views/Poll";
 import Save from "./views/Save";
 import Recommendations from "./views/Recommendations";
 import Matches from "./views/Matches";
-
+import AdminView from "./views/AdminView";
 
 import injectContext from "./store/appContext";
 
@@ -46,6 +46,7 @@ const Layout = () => {
                         <Route path="/save" element={<Save />}/>
                         <Route path="/recommendations" element={<Recommendations />}/>
                         <Route path="/matches" element={<Matches />}/>
+                        <Route path="/admin" element={<AdminView />}/>
                     </Routes>
                     <Footer />
                 </ScrollToTop>
