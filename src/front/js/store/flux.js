@@ -87,7 +87,11 @@ const getState = ({ getStore, getActions, setStore }) => {
         const currUser = resultFinal.data
         setStore({ currentUser: currUser });
         sessionStorage.setItem("currentUser", JSON.stringify(currUser));
-        navigate("/profile");
+        if(item.email === 'admin@travellersmatch.com'){
+          navigate("/admin");
+        }
+        else{navigate("/profile");}
+        
       },
 
     },

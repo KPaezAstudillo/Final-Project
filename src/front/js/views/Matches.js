@@ -44,7 +44,7 @@ const Matches = () => {
   //FETCH FUNCTIONS
 
   const getAllUsersWithTripsAsync = async () => {
-    let url = `${process.env.BACKEND_URL}/users/mytrips`;
+    let url = `${process.env.BACKEND_URL}/users/createtrips`;
     let options_get = {
       method: "GET",
       mode: "cors",
@@ -57,16 +57,16 @@ const Matches = () => {
       const response = await fetch(url, options_get);
       const data = await response.json();
       console.log(data);
-      console.log(data.mytrips);
+      console.log(data[0]);
       setAllUsers(data);
-      setTrips(data.mytrips);
+      setTrips(data);
     } catch (error) {
       console.log(error);
     }
   };
 
   const getUserWithTripsAsync = async () => {
-    let url = `${process.env.BACKEND_URL}/users/${user_id}/mytrips`;
+    let url = `${process.env.BACKEND_URL}/users/1/createtrips`;
     let options_get = {
       method: "GET",
 
@@ -79,8 +79,9 @@ const Matches = () => {
       const response = await fetch(url, options_get);
       const data = await response.json();
       console.log(data);
-      console.log(data.mytrips);
-      setuser_trip(data.mytrips);
+      console.log(data);
+      setuser_trip(data.createtrips);
+      console.log(user_trip);
       setUser(data);
     } catch (error) {
       console.log(error);
@@ -125,12 +126,12 @@ const Matches = () => {
     !!trips &&
     trips.length > 0 &&
     trips.map((elem, i) => {
-      return elem.mytrips[0];
+      return elem.createtrips[0];
     });
   const onlyUserTrips =
     !!user_trip &&
     user_trip.length > 0 &&
-    user_trip.mytrips.map((elem, i) => {
+    user_trip.map((elem, i) => {
       console.log(elem);
       return elem;
     });
@@ -188,7 +189,7 @@ const Matches = () => {
       }
     };
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip);
       if (usertrip.traveling == value) {
         return elem;
@@ -204,7 +205,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (travelArr.length === 0 || travelArr.length > 0) {
       console.log(filter8);
@@ -227,7 +228,7 @@ const Matches = () => {
     };
 
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip);
       if (usertrip.children == value) {
         return elem;
@@ -243,7 +244,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (travelArr.length === 0) {
       console.log(filter8);
@@ -272,7 +273,7 @@ const Matches = () => {
     };
 
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip);
       if (Math.abs(usertrip.budget - value) <= 1000) {
         return elem;
@@ -288,7 +289,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (travelArr.length === 0 && childrenArr.length === 0) {
       console.log(filter8);
@@ -321,7 +322,7 @@ const Matches = () => {
     };
 
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip.activity);
       if (usertrip.activity == value) {
         return elem;
@@ -337,7 +338,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -379,7 +380,7 @@ const Matches = () => {
     };
 
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip);
       if (usertrip.gender == value) {
         return elem;
@@ -395,7 +396,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -443,7 +444,7 @@ const Matches = () => {
     };
 
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip);
       if (usertrip.age == value) {
         return elem;
@@ -459,7 +460,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -513,7 +514,7 @@ const Matches = () => {
     };
 
     const filterFunction2 = (elem) => {
-      const usertrip = elem.mytrips[0];
+      const usertrip = elem.createtrips[0];
       console.log(usertrip);
       if (usertrip.stay == value) {
         return elem;
@@ -529,7 +530,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -614,7 +615,7 @@ const Matches = () => {
   const handleTrip = (id) => {
     console.log("hey!");
     console.log(id);
-    const tripArr = user_trip.mytrips;
+    const tripArr = user_trip;
     const chosenTripArr = tripArr.filter((elem) => elem.id === id);
     setChosenTrip(chosenTripArr[0]);
     console.log(chosenTripArr[0]);
@@ -624,11 +625,11 @@ const Matches = () => {
   //USEEFFECT
 
   useEffect(() => {
-    getAllUsersWithTripsAsync();
+    getUserWithTripsAsync();
   }, []);
 
   useEffect(() => {
-    getUserWithTripsAsync();
+    getAllUsersWithTripsAsync();
   }, []);
 
   return (
