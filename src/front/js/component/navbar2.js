@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import logo from "../../img/logo.png";
@@ -15,6 +15,7 @@ export let navbar = {
 }
 // cambiar logo a link
 const Navbar2 = () => {
+    const [login, setLogin] = useState(true)
     let navbar = {
         logo: 'Travellers Match',
         options: [
@@ -22,9 +23,12 @@ const Navbar2 = () => {
             { link: '/users/:id/createtrip', label: 'Create Trip' },
             { link: '/mytrips', label: 'Trips' },
             { link: '/#', label: 'Contact' },
-            { link: '/#', label: 'Servicios' },
+            { link: '/#', label: 'Services' },
         ]
     }
+
+
+
     return (<nav className="navbar navbar-expand-lg img-fluid sticky-top">
         <div className="container-fluid ">
         <img className="img-logo" src={logo} />

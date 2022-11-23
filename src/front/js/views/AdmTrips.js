@@ -101,8 +101,14 @@ const Mytrips = () => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+        window.location.href = '/login';
+}
   return (
     <div className="full-account1 ">
+      <a className='nav-link text-danger d-flex justify-content-end' onClick={handleLogout}> Cerrar Sesión</a>
       <div className="container my-4">
         <div className="row justify-content-between">
           <div className="col-md-6 col-12">

@@ -120,15 +120,15 @@ const Poll = () => {
                         </div>
                         <div className='col-lg-7 col-12 align-content-center'>
                             <p>From 1 to 7, being 1 the worst and 7 the best experience: </p>
-                            <p class="instructions">(set sliders according to your preferences)</p>
-                            <label htmlFor='customRange1' class='form-label'>Was your partner a good match according to what you were looking for?</label>
+                            <p className="instructions">(set sliders according to your preferences)</p>
+                            <label htmlFor='customRange1' className='form-label'>Was your partner a good match according to what you were looking for?</label>
                             <div className='d-flex'>
-                                <input type='range' class='slider form-range w-50 mb-3  in-line' min='1' max='7' step='1' id='customRange1' onInput={handleFirstInput} name='good_match' value={firstInput} onChange={(e) => handleChange(e)} />
+                                <input type='range' className='slider form-range w-50 mb-3  in-line' min='1' max='7' step='1' id='customRange1' onInput={handleFirstInput} name='good_match' value={firstInput} onChange={(e) => handleChange(e)} />
                                 <label className='form-label in-line ms-4' id='rangeValue'>{firstInput}</label>
                             </div>
-                            <p htmlFor='customRange2' class='form-label'>Would you recommend your partner to join other travellers?</p>
+                            <p htmlFor='customRange2' className='form-label'>Would you recommend your partner to join other travellers?</p>
                             <div className='d-flex'>
-                                <input type='range' class='slider form-range w-50 mb-3' min='1' max='7' step='1' id='customRange2' onInput={handleSecondInput} name='recommend' value={secondInput} onChange={(e) => handleChange(e)} />
+                                <input type='range' className='slider form-range w-50 mb-3' min='1' max='7' step='1' id='customRange2' onInput={handleSecondInput} name='recommend' value={secondInput} onChange={(e) => handleChange(e)} />
                                 <p className='d-flex in-line ms-4' id='rangeValue'>{secondInput}</p>
                             </div>
                             <div className={'mb-3' + (secondInput < 5 ? ' d-none' : '')}>
@@ -188,8 +188,8 @@ const Poll = () => {
                             </div>
                         </div>
                     </div>
-                    <div class="row d-flex">
-                        <div class="col-lg-3 col-12 ms-auto">
+                    <div className="row d-flex">
+                        <div className="col-lg-3 col-12 ms-auto">
                             <button type='submit' className='btn btn-primary mb-5 btn-lg'>Submit</button>
                         </div>
                     </div>

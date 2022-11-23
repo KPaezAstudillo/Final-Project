@@ -19,6 +19,11 @@ const Profile = () => {
   const { store, actions } = useContext(Context);
   const [rating, setRating] = useState([]);
  const[calificacion,setCalificacion]= useState(7)
+ const [login, setLogin] = useState(true)
+    
+    useEffect(() => {
+        setLogin(false)
+    }, [])
   // const user_id = store.currentUser?.user?.id;
 
   useEffect(() => {
@@ -183,10 +188,17 @@ const createTrip = async () => {
 
   window.location = `/users/${store.currentUser?.user?.id}/createtrip`
 }
+
+const handleLogout = () => {
+  localStorage.clear();
+  sessionStorage.clear();
+      window.location.href = '/login';
+}
+
 return (
 
   <div className="ContainerPrincipal">
-
+    <a className='nav-link text-danger d-flex justify-content-end' onClick={handleLogout}> Cerrar Sesión</a>
     <div className="container my-4">
       <h1 className="text-center">{store?.currentUser?.user?.firstname}'s Profile</h1>
       <div className="row principal">

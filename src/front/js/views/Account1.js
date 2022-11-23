@@ -18,7 +18,6 @@ const Account1 = () => {
     const [genderAlert, setGenderAlert] = useState(false)
     const [fistNameAlert, setFirstNameAlert] = useState(false)
     const [lastNameAlert, setLastNameAlert] = useState(false)
-    
 
     useEffect(() => {
         fetchCountries()

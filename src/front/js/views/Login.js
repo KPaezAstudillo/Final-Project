@@ -23,6 +23,7 @@ const Login = () => {
   const { store , actions } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [login, setLogin] = useState(true)
   const navigate = useNavigate();
 
   return (

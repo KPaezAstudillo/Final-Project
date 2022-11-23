@@ -150,9 +150,17 @@ const CreateTrips = () => {
     }
   };
 
+  const handleLogout = () => {
+    localStorage.clear();
+    sessionStorage.clear();
+        window.location.href = '/login';
+}
+
   return (
     <form id="create" onSubmit={handleCreateTrip}>
       <div className="bigcontainer">
+      <a className='nav-link text-danger d-flex justify-content-end' onClick={handleLogout}> Cerrar Sesión</a>
+
         <h1>CREATE YOUR TRIP</h1>
         <div className="container-trip col-10">
           <div className="destination">
