@@ -312,3 +312,10 @@ def update_mytrip_by_user_id_and_trip_id(id, mytrips_id):
 #     activity.nightlife = nightlife
 #     activity.shopping = shopping
 #     activity.trips_id = trips_id
+
+
+@bpUser.route('/user/<int:id>/delete', methods=['DELETE'])
+def delete_user(id):
+    user = User.query.get(id)
+    user.delete()
+    return jsonify({"message": "user deleted"}), 200

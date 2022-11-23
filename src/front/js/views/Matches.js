@@ -205,7 +205,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (travelArr.length === 0 || travelArr.length > 0) {
       console.log(filter8);
@@ -244,7 +244,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (travelArr.length === 0) {
       console.log(filter8);
@@ -289,7 +289,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (travelArr.length === 0 && childrenArr.length === 0) {
       console.log(filter8);
@@ -338,7 +338,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -396,7 +396,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -460,7 +460,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
@@ -530,7 +530,7 @@ const Matches = () => {
     const filter5 = travelArr.filter(filterFunction2);
     const filter6 = stayArr.filter(filterFunction2);
     const filter7 = budgetArr.filter(filterFunction2);
-    const filter8 = arr.filter(filterFunction2);
+    const filter8 = trips.filter(filterFunction2);
 
     if (
       travelArr.length === 0 &&
