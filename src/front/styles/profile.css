@@ -52,6 +52,7 @@
     color: #336b87;
   }
   .infogen {
+    margin-top: 30px;
     align-items: center;
     padding: 20px;
     border: 1px solid #336b87;
@@ -66,6 +67,7 @@
   }
   
   .tags {
+    margin-top: 30px;
     padding: 15px;
     text-align: center;
   }
